@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
@@ -181,7 +180,7 @@ void measureFreq(int interval, float *val, int pinNum)
     timer_callback_args_t callback_args = {
         .pcnt_unit = pcnt_unit,
         .val = val,
-        .pinNum = pinNum > 10 ? 2 : 1,
+        .pinNum = pinNum > 10 ? 2 : 1, 
         .interval = interval};
     esp_timer_create_args_t timer_args = {
         .callback = &freqCallBack,
@@ -208,11 +207,11 @@ void measureFreqTask3(void *pvParameter)
 
 
 
-void outputSignalTask(void *parameters) {
+void digitalSignalTask(void *parameters) {
     for (;;) {  // Keep the infinite loop
         // High for 180us
         gpio_set_level(SIGNAL_PIN, 1);
-        esp_rom_delay_us(180);
+        esp_rom_delay_us(180); 
 
         // Low for 40us
         gpio_set_level(SIGNAL_PIN, 0);
@@ -220,11 +219,11 @@ void outputSignalTask(void *parameters) {
 
         // High for 530us
         gpio_set_level(SIGNAL_PIN, 1);
-        esp_rom_delay_us(530);
+        esp_rom_delay_us(530); 
 
         // Low for 3.25ms
         gpio_set_level(SIGNAL_PIN, 0);
-        esp_rom_delay_us(3250);
+        esp_rom_delay_us(3250); 
     } // End of the infinite loop
 }
 

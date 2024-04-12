@@ -13,5 +13,6 @@
     ],
     "idf.port": "/dev/cu.wlan-debug",
     "idf.pythonBinPath": "/Users/masterjain/.espressif/python_env/idf5.2_py3.11_env/bin/python",
-    "idf.toolsPath": "/Users/masterjain/.espressif"
+    "idf.toolsPath": "/Users/masterjain/.espressif",
+    "idf.flashType": "UART"
 }
